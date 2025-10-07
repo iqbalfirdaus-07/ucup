@@ -1,99 +1,68 @@
-// Import library dan komponen yang dibutuhkan
-import { ThemedText } from '@/components/themed-text'; // Komponen teks yang mendukung tema (dark/light mode)
-import { ThemedView } from '@/components/themed-view'; // Komponen view yang mendukung tema (dark/light mode)
-import { StyleSheet } from 'react-native'; // StyleSheet untuk membuat styling CSS-like
+import React from "react";
+import { View, Text, StyleSheet, ScrollView } from "react-native";
 
-// Fungsi komponen utama untuk halaman Home
-export default function HomeScreen() {
-  // Return JSX - struktur tampilan yang akan ditampilkan
+export default function IndexScreen() {
   return (
-    // ThemedView = container utama yang mendukung tema
-    // style={styles.container} = menerapkan styling dari StyleSheet di bawah
-    <ThemedView style={styles.container}>
-      {/* ThemedView kedua = container untuk konten di tengah */}
-      <ThemedView style={styles.content}>
-        {/* ThemedText untuk judul utama */}
-        {/* type="title" = memberikan styling default untuk judul */}
-        {/* style={styles.title} = menambahkan styling custom */}
-        <ThemedText type="title" style={styles.title}>
-          Profil Mahasiswa
-        </ThemedText>
-        
-        {/* ThemedText untuk nama */}
-        <ThemedText style={styles.subtitle}>
-          Nama: Muhamad Iqbal Firdaus
-        </ThemedText>
-        
-        {/* ThemedText untuk NIM */}
-        <ThemedText style={styles.nim}>
-          NIM: 1123031004
-        </ThemedText>
-        
-        {/* ThemedText untuk program studi */}
-        <ThemedText style={styles.programStudi}>
-          Program Studi: informatika
-        </ThemedText>
-        
-        {/* ThemedText untuk deskripsi */}
-        <ThemedText style={styles.description}>
-          Selamat datang di aplikasi Expo pertama saya🎉
-        </ThemedText>
-      </ThemedView>
-    </ThemedView>
+    <ScrollView style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.title}>Pakan Ikan</Text>
+      </View>
+
+      <View style={styles.card}>
+        <Text style={styles.cardTitle}>Informasi Pakan</Text>
+        <Text style={styles.cardText}>
+          Pantau penggunaan pakan harian dan stok pakan untuk setiap kolam ikan.
+        </Text>
+      </View>
+
+      <View style={styles.card}>
+        <Text style={styles.cardTitle}>Statistik Penggunaan</Text>
+        <Text style={styles.cardText}>
+          Grafik dan data konsumsi pakan akan muncul di sini.
+        </Text>
+      </View>
+    </ScrollView>
   );
 }
 
-// StyleSheet untuk styling komponen (seperti CSS tapi untuk React Native)
 const styles = StyleSheet.create({
-  // Style untuk container utama
   container: {
-    flex: 1, // Menggunakan seluruh ruang yang tersedia
-    justifyContent: 'center', // Menempatkan konten di tengah secara vertikal
-    alignItems: 'center', // Menempatkan konten di tengah secara horizontal
-    padding: 20, // Jarak dari tepi layar
+    flex: 1,
+    backgroundColor: "#E6F0FA", // biru muda lembut
   },
-  // Style untuk container konten
-  content: {
-    alignItems: 'center', // Menempatkan semua item di tengah
-    maxWidth: 300, // Lebar maksimal konten
+  header: {
+    backgroundColor: "#007BFF", // biru utama
+    paddingVertical: 20,
+    alignItems: "center",
+    borderBottomLeftRadius: 20,
+    borderBottomRightRadius: 20,
+    shadowColor: "#000",
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
   },
-  // Style untuk judul utama
   title: {
-    fontSize: 32, // Ukuran font besar
-    fontWeight: 'bold', // Font tebal
-    marginBottom: 14, // Jarak bawah dari elemen berikutnya
-    textAlign: 'center', // Teks di tengah
+    color: "#fff",
+    fontSize: 24,
+    fontWeight: "bold",
   },
-  // Style untuk nama
-  subtitle: {
-    fontSize: 20, // Ukuran font sedang-besar
-    marginBottom: 8, // Jarak bawah
-    textAlign: 'center', // Teks di tengah
-    fontWeight: '600', // Font semi-bold
-    opacity: 0.9, // Transparansi 90%
+  card: {
+    backgroundColor: "#fff",
+    margin: 15,
+    padding: 20,
+    borderRadius: 15,
+    shadowColor: "#000",
+    shadowOpacity: 0.1,
+    shadowRadius: 5,
   },
-  // Style untuk NIM
-  nim: {
-    fontSize: 18, // Ukuran font sedang
-    marginBottom: 8, // Jarak bawah
-    textAlign: 'center', // Teks di tengah
-    fontWeight: '500', // Font medium
-    opacity: 0.8, // Transparansi 80%
+  cardTitle: {
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "#0056b3", // biru gelap
+    marginBottom: 10,
   },
-  // Style untuk Program Studi
-  programStudi: {
-    fontSize: 16, // Ukuran font normal
-    marginBottom: 16, // Jarak bawah
-    textAlign: 'center', // Teks di tengah
-    fontWeight: '500', // Font medium
-    opacity: 0.8, // Transparansi 80%
-  },
-  // Style untuk deskripsi
-  description: {
-    fontSize: 16, // Ukuran font normal
-    textAlign: 'center', // Teks di tengah
-    lineHeight: 24, // Jarak antar baris
-    opacity: 0.7, // Transparansi 70%
-    marginTop: 20, // Jarak atas dari elemen sebelumnya
+  cardText: {
+    fontSize: 14,
+    color: "#333",
+    lineHeight: 20,
   },
 });
