@@ -31,7 +31,7 @@ export default function HomeScreen() {
         
         {/* ThemedText untuk program studi */}
         <ThemedText style={styles.programStudi}>
-          Program Studi: Teknik Informatika
+          Program Studi: informatika
         </ThemedText>
         
         {/* ThemedText untuk deskripsi */}
