@@ -36,7 +36,7 @@ export default function HomeScreen() {
         
         {/* ThemedText untuk deskripsi */}
         <ThemedText style={styles.description}>
-          Selamat datang di aplikasi Expo pertama saya! 🎉
+          Selamat datang di aplikasi Expo pertama saya🎉
         </ThemedText>
       </ThemedView>
     </ThemedView>
